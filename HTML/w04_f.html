@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* body{
+            height: 100vh;
+            background-image: linear-gradient(135deg, green,white);
+        } */
+      .box {
+        border-radius: 12px;
+        box-shadow: 4px 4px 7px gray;
+        width: 200ps;
+        height: 300px;
+        margin: 10px;
+      }
+      /* .img-fix{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      } */
+       .img-a{
+        z-index: 20;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+       }
+       
+       .img-b{
+        z-index: 10;
+        position: absolute;
+        top: 150px;
+        left: 150px;
+       }
+       
+       .img-c{
+        position: absolute;
+        top: 200px;
+        left: 200px;
+       }
+       
+    </style>
+  </head>
+  <body>
+    <img class="box img-a" src="https://picsum.photos/200/300?random=1" alt="pic" />
+      <img class="box img-b" src="https://picsum.photos/200/300?random=2" alt="pic" />
+      <img class="box img-c" src="https://picsum.photos/200/300?random=3" alt="pic" />
+  </body>
+</html>

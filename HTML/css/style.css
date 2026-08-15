@@ -1,0 +1,41 @@
+
+      .logo-lg {
+        font-size: 100px;
+      }
+      .logo-xl {
+        font-size: 200px;
+      }
+      .logo-rad {
+        color: red;
+      }
+      .logo-blue {
+        color: blue;
+      }
+      .logo-shadow {
+        text-shadow: 6px 6px 8px #000000;
+      }
+      .box {
+        width: 200px;
+        height: 300px;
+        border: 1px solid black;
+        padding: 10px 10px 10px 10px;
+        border-radius: 12px;
+        box-shadow: 10px 10px 5px #888888;
+      }
+      .box-img {
+        width: 200px;
+        height: 300px;
+        border-radius: 12px;
+        box-shadow: 10px 10px 5px #888888;
+        margin: 20px;
+      }
+
+      .box-img:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+
+      .box p {
+        font-size: 20px;
+        color: red;
+      }

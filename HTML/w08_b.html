@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id ="container" class="relative container m-5">
+        <button id="add" class="w-24 text-white bg-blue-500 rounded-lg shadow-lg px-5 py-3 transition-transform hover:border-2 hover:text-blue-500 hover:bg-white">Add</button>
+        <button id="remove" class="w-24 text-white bg-blue-500 rounded-lg shadow-lg px-5 py-3 transition-transform hover:border-2 hover:text-blue-500 hover:bg-white">Remove</button>
+        <hr class="divide-x-2 my-5">
+
+    </div>
+    <img src="https://picsum.photos/300/200?random=1" alt="pic" class="absolute top-50 left-50 rounded-xl shadow-xl">
+    <img src="https://picsum.photos/300/200?random=2" alt="pic" class="absolute top-64 left-100 rounded-xl shadow-xl">
+    <img src="https://picsum.photos/300/200?random=3" alt="pic" class="absolute top-100 left-64 rounded-xl shadow-xl">
+
+
+    <script>
+        let container = document.querySelector("#container");
+        let add = document.querySelector("#add");
+        add.addEventListener("click",()=>{
+            let image =document.createElement("img");
+            image.src = "https://picsum.photos/300/200?random=" + Math.floor(Math.random() * 100 + 1);
+            image.setAttribute("class", "absolute rounded-xl shadow-xl");
+            container.appendChild(image);
+        })
+
+
+        function dragImage(e){
+            curImage = e.target;
+            posX = e.offsetX;
+            posY = e.offsetY;
+        }
+        function dropImage(e){
+            curImage.style.top = e.pageY - posY + "px";
+            curImage.style.left = e.pageX - posX + "px";
+        }
+        document.body.addEventListener("dragstart", dragImage, false);
+        document.body.addEventListener("dragend", dropImage, false);
+    </script>
+</body>
+</html>

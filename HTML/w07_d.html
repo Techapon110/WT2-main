@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        input[type="range"]{
+            width: 400px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="ct">Hello CT</h1>
+    <button onclick="ChangeText()">Change Text</button>
+    <hr>
+    <input oninput="ChangeColor();" type="color" name="c" id="c">
+    <hr>
+    <input oninput="mixColor();" type="range" name="r" id="r" min="0" max="255"><br><br>
+    <input oninput="mixColor();" type="range" name="g" id="g" min="0" max="255"><br><br>
+    <input oninput="mixColor();" type="range" name="b" id="b" min="0" max="255">
+    <hr>
+    <button id="btn">Hide</button><br><br>
+    <img src="https://picsum.photos/300/200?random=1" alt="pic" id="pic">
+    <script>
+
+        let btn = document.querySelector("#btn");
+        btn.addEventListener("click", function (){
+          if(btn.innerHTML === "Hide"){
+         document.querySelector("#pic").style.display = "none";
+         btn.innerHTML = "Show";
+         } else {
+         document.querySelector("#pic").style.display = "block";
+         btn.innerHTML = "Hide";
+         }
+            document.querySelector("#pic").style.display = (btn.innerHTML === "Hide") ? "none" : "block";
+            btn.innerHTML = (btn.innerHTML === "Hide") ? "Show" : "Hide";
+        });
+
+        function mixColor(){
+            let r = document.getElementById("r");
+            let g = document.getElementById("g");
+            let b = document.getElementById("b");
+            document.body.style.backgroundColor = `rgb(${r.value}, ${g.value}, ${b.value})`;
+
+        }
+
+        function ChangeColor(){
+            let c = document.getElementById("c");
+            document.body.style.backgroundColor = c.value;
+        }
+
+
+        function ChangeText(){
+            console.log("dftasda")
+            let ct = document.getElementById("ct");
+            if (ct.innerHTML === "Hello CT"){
+                ct.innerHTML = "Bye Bye";
+                ct.style.color = "red";
+            } else{
+                ct.innerHTML = "Hello CT";
+                ct.style.color = "black";
+            }
+        }
+    </script>
+
+</body>
+</html>

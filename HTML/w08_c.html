@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+</head>
+<body>
+    <button id="hide" class="ui-button ui-widget ui-corner-all">Hide</button>
+    <button id="show" class="ui-button ui-widget ui-corner-all">Show</button>
+    <button id="toggle" class="ui-button ui-widget ui-corner-all">Toggle</button>
+    <button id="move" class="ui-button ui-widget ui-corner-all">Move</button>
+    <button id="add" class="ui-button ui-widget ui-corner-all">Add</button>
+    <hr>
+    <img src="https://picsum.photos/300/200?random=1" alt="pic" id="pic">
+
+    <script>
+        $(function (){
+            $("#pic").draggable();
+        });
+
+        $("#hide").click(()=>{
+            $("#pic").hide(1000);
+        });
+        $("#show").click(()=>{
+            $("#pic").show(1000);
+        });
+        $("#toggle").click(()=>{
+            $("#pic").toggle(1000);
+        });
+        $("#move").click(()=>{
+            $("#pic").animate({left: "+=400px"}, 1000);
+        })
+        $("#add").click(()=>{
+            $("<img />",{src:"https://picsum.photos/300/200?random=2"}).appendTo("body");
+        })
+
+    </script>
+</body>
+</html>
